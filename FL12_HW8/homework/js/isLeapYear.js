@@ -3,7 +3,7 @@ function isLeapYear(str){
     var date= new Date(str);
     if(date.getFullYear()%4===0){
         
-        if(date.getFullYear()%100!==0 && date.getFullYear%400===0){
+        if(date.getFullYear()%100!==0){
             
             return '"'+date.getFullYear()+'" is a leap year';
             
@@ -22,4 +22,4 @@ function isLeapYear(str){
 }
 }
 
-isLeapYear('2200-01-15 13:00:00');
+isLeapYear('2020-01-15 13:00:00');

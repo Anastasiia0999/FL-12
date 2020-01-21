@@ -55,7 +55,7 @@ function MyFighter(obj){
     
     this.attack=function(d){
         
-        if((d.getStrength()+d.getAgility()) < Math.random()*100){
+        if(d.getStrength()+d.getAgility() < Math.random()*100){
             
             console.log(` ${this.getName()} makes ${this.getDamage()} damage to ${d.getName()}`);
             d.dealDamage(this.getDamage());

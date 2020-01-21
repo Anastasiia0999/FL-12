@@ -1,10 +1,10 @@
-function MyFighter(n, d, h, s, a){
+function MyFighter(obj){
     
-    let name=n;
-    let damage = d;
-    let hp = h;
-    let strength = s;
-    let agility = a;
+    let name=obj.name;
+    let damage = obj.damage;
+    let hp = obj.hp;
+    let strength = obj.strength;
+    let agility = obj.agility;
     
     let wins = 0;
     let losses = 0;
@@ -55,7 +55,7 @@ function MyFighter(n, d, h, s, a){
     
     this.attack=function(d){
         
-        if(100-(d.getStrength()+d.getAgility())>50){
+        if((d.getStrength()+d.getAgility()) < Math.random()*100){
             
             console.log(` ${this.getName()} makes ${this.getDamage()} damage to ${d.getName()}`);
             d.dealDamage(this.getDamage());
@@ -87,8 +87,10 @@ function battle(fighter1, fighter2){
     
 }
 
-let FighterOne = new MyFighter('Maximus', 25, 100, 20, 15);
-let FighterTwo = new MyFighter('Commodus', 35, 100, 10, 21);
+let obj1={name: 'Maximus', damage: 25, hp: 100, strength: 30, agility: 25};
+let obj2={name: 'Commodus', damage: 15, hp: 100, strength: 20, agility: 15};
+let FighterOne = new MyFighter(obj1);
+let FighterTwo = new MyFighter(obj2);
 
 battle(FighterOne, FighterTwo);
 
